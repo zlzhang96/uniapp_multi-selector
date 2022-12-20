@@ -1,9 +1,11 @@
 <template>
   <view class="uni-select-cy" :style="{ 'z-index': zindex }">
+    <!-- 允许点击事件冒泡 -->
+    <!-- @click.stop="handleSelect" -->
     <view
       class="uni-select-cy-select"
       :class="{ active: active }"
-      @click.stop="handleSelect"
+      @click="handleSelect"
     >
       <!-- 禁用mask -->
       <view class="uni-disabled" v-if="disabled"></view>
@@ -77,6 +79,7 @@ export default {
       type: Boolean,
       default: true,
     },
+    //堆叠的层级
     zindex: {
       type: Number,
       default: 999,
